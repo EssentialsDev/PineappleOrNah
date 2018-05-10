@@ -12,8 +12,9 @@
 		4A8F8F5E208FE16D002D572F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8F8F5C208FE16D002D572F /* Main.storyboard */; };
 		4A8F8F60208FE16E002D572F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8F8F5F208FE16E002D572F /* Assets.xcassets */; };
 		4A8F8F63208FE16E002D572F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8F8F61208FE16E002D572F /* LaunchScreen.storyboard */; };
-		4A8F8F6E208FE16E002D572F /* PineappleOrNahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F8F6D208FE16E002D572F /* PineappleOrNahTests.swift */; };
 		4A8F8F79208FE16E002D572F /* PineappleOrNahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F8F78208FE16E002D572F /* PineappleOrNahUITests.swift */; };
+		4A8F8F87208FEE6D002D572F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F8F86208FEE6D002D572F /* RoundedButton.swift */; };
+		4A8F8F89208FF398002D572F /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F8F88208FF398002D572F /* RoundedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +43,11 @@
 		4A8F8F62208FE16E002D572F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A8F8F64208FE16E002D572F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A8F8F69208FE16E002D572F /* PineappleOrNahTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineappleOrNahTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A8F8F6D208FE16E002D572F /* PineappleOrNahTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineappleOrNahTests.swift; sourceTree = "<group>"; };
-		4A8F8F6F208FE16E002D572F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A8F8F74208FE16E002D572F /* PineappleOrNahUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PineappleOrNahUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8F8F78208FE16E002D572F /* PineappleOrNahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PineappleOrNahUITests.swift; sourceTree = "<group>"; };
 		4A8F8F7A208FE16E002D572F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A8F8F86208FEE6D002D572F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		4A8F8F88208FF398002D572F /* RoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				4A8F8F57208FE16D002D572F /* PineappleOrNah */,
-				4A8F8F6C208FE16E002D572F /* PineappleOrNahTests */,
 				4A8F8F77208FE16E002D572F /* PineappleOrNahUITests */,
 				4A8F8F56208FE16D002D572F /* Products */,
 			);
@@ -103,17 +103,10 @@
 				4A8F8F5F208FE16E002D572F /* Assets.xcassets */,
 				4A8F8F61208FE16E002D572F /* LaunchScreen.storyboard */,
 				4A8F8F64208FE16E002D572F /* Info.plist */,
+				4A8F8F86208FEE6D002D572F /* RoundedButton.swift */,
+				4A8F8F88208FF398002D572F /* RoundedLabel.swift */,
 			);
 			path = PineappleOrNah;
-			sourceTree = "<group>";
-		};
-		4A8F8F6C208FE16E002D572F /* PineappleOrNahTests */ = {
-			isa = PBXGroup;
-			children = (
-				4A8F8F6D208FE16E002D572F /* PineappleOrNahTests.swift */,
-				4A8F8F6F208FE16E002D572F /* Info.plist */,
-			);
-			path = PineappleOrNahTests;
 			sourceTree = "<group>";
 		};
 		4A8F8F77208FE16E002D572F /* PineappleOrNahUITests */ = {
@@ -257,6 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8F8F5B208FE16D002D572F /* ViewController.swift in Sources */,
+				4A8F8F87208FEE6D002D572F /* RoundedButton.swift in Sources */,
+				4A8F8F89208FF398002D572F /* RoundedLabel.swift in Sources */,
 				4A8F8F59208FE16D002D572F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A8F8F6E208FE16E002D572F /* PineappleOrNahTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

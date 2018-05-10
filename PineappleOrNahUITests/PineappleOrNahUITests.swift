@@ -9,28 +9,64 @@
 import XCTest
 
 class PineappleOrNahUITests: XCTestCase {
-        
+    
+    var app: XCUIApplication!
+    
+    var nahButton: XCUIElement {
+        return app.buttons["Nah"]
+    }
+    
+    var pineappleButton: XCUIElement {
+        return app.buttons["Pineapple"]
+    }
+    
+    var nahImageView: XCUIElement {
+        return app.otherElements.containing(.image, identifier:"nahImage").element
+    }
+    
+    var pineappleImageView: XCUIElement {
+        return app.otherElements.containing(.image, identifier:"pineappleImage").element
+    }
+    
+    var resetButton: XCUIElement {
+        return app.buttons["Restart"]
+    }
+    
+    var gameOverLabel: XCUIElement {
+        return app.staticTexts["Game Over"]
+    }
+    
     override func setUp() {
         super.setUp()
         
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        app = XCUIApplication()
+        app.launchArguments = ["isUITesting"]
+        app.launch()
+    }
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    func testGameActuallyWorks() {
+        for _ in 0...20 {
+            if pineappleImageView.exists {
+                pineappleButton.tap()
+            } else {
+                nahButton.tap()
+            }
+            
+            assert(gameOverLabel.exists == false, "Games buttons are not working properly")
+        }
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testGameOver() {
+        for _ in 0...20 {
+            if pineappleImageView.exists {
+                nahButton.tap()
+            } else {
+                pineappleButton.tap()
+            }
+            
+            assert(gameOverLabel.exists == true)
+            resetButton.tap()
+        }
     }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
 }

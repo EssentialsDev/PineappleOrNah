@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,87 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PineappleOrNah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RXj-Oh-DDE" userLabel="Random Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DrC-Gb-zT2">
+                                <rect key="frame" x="15" y="592" width="345" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AO-PO-AzX" customClass="RoundedButton" customModule="PineappleOrNah" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.94509803920000002" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <state key="normal" title="Pineapple"/>
+                                        <connections>
+                                            <action selector="pineapplePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YDB-rW-Mag"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abz-nK-CaR" customClass="RoundedButton" customModule="PineappleOrNah" customModuleProvider="target">
+                                        <rect key="frame" x="172.5" y="0.0" width="0.0" height="60"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.94509803920000002" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <state key="normal" title="Restart"/>
+                                        <connections>
+                                            <action selector="nahButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KJO-jl-r19"/>
+                                            <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5kl-zt-3Ma"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-0j-KPG" customClass="RoundedButton" customModule="PineappleOrNah" customModuleProvider="target">
+                                        <rect key="frame" x="180" y="0.0" width="165" height="60"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.94509803920000002" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <state key="normal" title="Nah"/>
+                                        <connections>
+                                            <action selector="nahButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOk-h7-oxY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uCw-ls-wJl"/>
+                                </constraints>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEi-gu-D0M" customClass="RoundedLabel" customModule="PineappleOrNah" customModuleProvider="target">
+                                <rect key="frame" x="15" y="95" width="345" height="75"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.94509803920000002" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Vi0-nq-NJu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RXj-Oh-DDE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8c2-5S-E6h"/>
+                            <constraint firstItem="RXj-Oh-DDE" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="9Uk-8u-1nM"/>
+                            <constraint firstItem="kEi-gu-D0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="J3e-mv-KSk"/>
+                            <constraint firstItem="RXj-Oh-DDE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ohp-zW-CEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kEi-gu-D0M" secondAttribute="trailing" constant="15" id="Rvk-R9-tvE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DrC-Gb-zT2" secondAttribute="trailing" constant="15" id="T6z-tP-xt4"/>
+                            <constraint firstItem="DrC-Gb-zT2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="aOu-g3-XvL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DrC-Gb-zT2" secondAttribute="bottom" constant="15" id="kN7-Ic-F12"/>
+                            <constraint firstItem="kEi-gu-D0M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="mQO-Ki-tvA"/>
+                            <constraint firstItem="RXj-Oh-DDE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xDf-xt-cLp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="gameOverLabel" destination="kEi-gu-D0M" id="SGI-zh-D2o"/>
+                        <outlet property="nahButton" destination="mta-0j-KPG" id="zA6-2W-jSS"/>
+                        <outlet property="pineappleButton" destination="1AO-PO-AzX" id="Rek-fo-QZx"/>
+                        <outlet property="randomImageView" destination="RXj-Oh-DDE" id="O8j-eG-jmH"/>
+                        <outlet property="resetButton" destination="Abz-nK-CaR" id="JXr-IU-XMX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.199999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
